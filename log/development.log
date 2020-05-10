@@ -1,0 +1,911 @@
+Started GET "/" for ::1 at 2020-05-10 17:51:04 +1000
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "HYPERBOLIC_development" does not exist
+):
+  
+activerecord (5.2.4.2) lib/active_record/connection_adapters/postgresql_adapter.rb:696:in `rescue in connect'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/postgresql_adapter.rb:691:in `connect'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/postgresql_adapter.rb:223:in `initialize'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `new'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `postgresql_connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:830:in `new_connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:874:in `checkout_new_connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `try_to_checkout_new_connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:814:in `acquire_connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:538:in `checkout'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:382:in `connection'
+activerecord (5.2.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:1033:in `retrieve_connection'
+activerecord (5.2.4.2) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.4.2) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.4.2) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (218.3ms)[0m  [1m[35mCREATE DATABASE "HYPERBOLIC_development" ENCODING = 'unicode'[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (105.2ms)[0m  [1m[35mCREATE DATABASE "HYPERBOLIC_test" ENCODING = 'unicode'[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Started GET "/" for ::1 at 2020-05-10 17:51:35 +1000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/railties-5.2.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/railties-5.2.4.2/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 14ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2402090002608272025)[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateActiveStorageTables (20200510102538)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200510102538_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/migrate/20200510102538_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  ↳ db/migrate/20200510102538_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/migrate/20200510102538_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/migrate/20200510102538_create_active_storage_tables.active_storage.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200510102538"]]
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-10 10:25:45.903756"], ["updated_at", "2020-05-10 10:25:45.903756"]]
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2402090002608272025)[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2402090002608272025)[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2402090002608272025)[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Started GET "/" for ::1 at 2020-05-10 20:33:03 +1000
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 201ms (Views: 195.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-05-10 20:33:10 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_up"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-05-10 20:44:13 +1000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+  Rendered shared/_alerts.html.erb (0.5ms)
+Completed 200 OK in 148ms (Views: 143.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:45:31 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:45:58 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - File to import not found or unreadable: bootstrap.
+Load paths:
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/config
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/images
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actioncable-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activestorage-5.2.4.2/app/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actionview-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/node_modules:
+
+Started POST "/__better_errors/da391ebe3d16d356/variables" for ::1 at 2020-05-10 20:45:58 +1000
+Started GET "/" for ::1 at 2020-05-10 20:46:26 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - File to import not found or unreadable: bootstrap.
+Load paths:
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/config
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/images
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actioncable-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activestorage-5.2.4.2/app/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actionview-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/node_modules:
+
+Started POST "/__better_errors/3b582c403bca83dd/variables" for ::1 at 2020-05-10 20:46:26 +1000
+Started GET "/" for ::1 at 2020-05-10 20:47:17 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - File to import not found or unreadable: bootstrap.
+Load paths:
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/config
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/images
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actioncable-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activestorage-5.2.4.2/app/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actionview-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/node_modules:
+
+Started POST "/__better_errors/c916d612d3a5b5e3/variables" for ::1 at 2020-05-10 20:47:18 +1000
+Started GET "/" for ::1 at 2020-05-10 20:47:20 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - File to import not found or unreadable: bootstrap.
+Load paths:
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/config
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/images
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actioncable-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activestorage-5.2.4.2/app/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actionview-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/node_modules:
+
+Started POST "/__better_errors/f3b3673d6ba434b1/variables" for ::1 at 2020-05-10 20:47:20 +1000
+Started GET "/" for ::1 at 2020-05-10 20:47:47 +1000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 1967ms (Views: 1962.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:47:58 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:48:26 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (4.5ms)
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:48:27 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navigation_bar.html.erb (0.8ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:48:28 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:48:29 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:48:29 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:48:29 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.4ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:48:30 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.5ms)
+Completed 200 OK in 45ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:48:30 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.9ms)
+Completed 200 OK in 42ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:49:00 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - couldn't find file 'jquery3' with type 'application/javascript'
+Checked in these paths: 
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/config
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/images
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actioncable-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activestorage-5.2.4.2/app/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actionview-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/node_modules
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/popper_js-1.16.0/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/bootstrap-4.4.1/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/bootstrap-4.4.1/assets/javascripts:
+
+Started POST "/__better_errors/3737115570b03b7b/variables" for ::1 at 2020-05-10 20:49:01 +1000
+Started GET "/" for ::1 at 2020-05-10 20:49:03 +1000
+Started GET "/" for ::1 at 2020-05-10 20:49:03 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - couldn't find file 'jquery3' with type 'application/javascript'
+Checked in these paths: 
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/config
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/images
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actioncable-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activestorage-5.2.4.2/app/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actionview-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/node_modules
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/popper_js-1.16.0/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/bootstrap-4.4.1/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/bootstrap-4.4.1/assets/javascripts:
+
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - couldn't find file 'jquery3' with type 'application/javascript'
+Checked in these paths: 
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/config
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/images
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actioncable-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activestorage-5.2.4.2/app/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actionview-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/node_modules
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/popper_js-1.16.0/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/bootstrap-4.4.1/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/bootstrap-4.4.1/assets/javascripts:
+
+Started POST "/__better_errors/5228b5ec0f11752e/variables" for ::1 at 2020-05-10 20:49:03 +1000
+Started GET "/" for ::1 at 2020-05-10 20:49:39 +1000
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 212ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - couldn't find file 'jquery3' with type 'application/javascript'
+Checked in these paths: 
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/config
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/images
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actioncable-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activestorage-5.2.4.2/app/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actionview-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/node_modules
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/popper_js-1.16.0/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/bootstrap-4.4.1/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/bootstrap-4.4.1/assets/javascripts:
+
+Started POST "/__better_errors/ca1ec9168dbd6f7f/variables" for ::1 at 2020-05-10 20:49:39 +1000
+Started GET "/" for ::1 at 2020-05-10 20:50:34 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - couldn't find file 'jquery3' with type 'application/javascript'
+Checked in these paths: 
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/config
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/images
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actioncable-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activestorage-5.2.4.2/app/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actionview-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/node_modules
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/popper_js-1.16.0/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/bootstrap-4.4.1/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/bootstrap-4.4.1/assets/javascripts:
+
+Started POST "/__better_errors/40907867ea5e907d/variables" for ::1 at 2020-05-10 20:50:34 +1000
+Started GET "/" for ::1 at 2020-05-10 20:51:06 +1000
+Started GET "/" for ::1 at 2020-05-10 20:51:06 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - couldn't find file 'jquery3' with type 'application/javascript'
+Checked in these paths: 
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/config
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/images
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actioncable-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activestorage-5.2.4.2/app/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actionview-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/node_modules
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/popper_js-1.16.0/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/bootstrap-4.4.1/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/bootstrap-4.4.1/assets/javascripts:
+
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - couldn't find file 'jquery3' with type 'application/javascript'
+Checked in these paths: 
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/config
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/images
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actioncable-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activestorage-5.2.4.2/app/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actionview-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/node_modules
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/popper_js-1.16.0/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/bootstrap-4.4.1/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/bootstrap-4.4.1/assets/javascripts:
+
+Started POST "/__better_errors/c2a595e2e8faf1de/variables" for ::1 at 2020-05-10 20:51:06 +1000
+Started GET "/" for ::1 at 2020-05-10 20:52:39 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 1118ms (ActiveRecord: 0.0ms)
+
+
+
+ActionView::Template::Error - couldn't find file 'jquery3' with type 'application/javascript'
+Checked in these paths: 
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/config
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/images
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/app/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actioncable-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activestorage-5.2.4.2/app/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/actionview-5.2.4.2/lib/assets/compiled
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/vincentlieu/Documents/CoderAcademy/Assignments/VincentLieu_T2A2/src/node_modules
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/popper_js-1.16.0/assets/javascripts
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/bootstrap-4.4.1/assets/stylesheets
+  /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/bootstrap-4.4.1/assets/javascripts:
+
+Started POST "/__better_errors/87d5402f913005cd/variables" for ::1 at 2020-05-10 20:52:40 +1000
+Started GET "/" for ::1 at 2020-05-10 20:53:12 +1000
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_navigation_bar.html.erb (0.4ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 1775ms (Views: 1770.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:53:19 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+  Rendered shared/_navigation_bar.html.erb (0.2ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 95ms (Views: 92.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:53:55 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 102ms (Views: 100.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:54:17 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.5ms)
+  Rendered shared/_alerts.html.erb (0.5ms)
+Completed 200 OK in 79ms (Views: 76.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:54:40 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.5ms)
+Completed 200 OK in 65ms (Views: 63.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:54:41 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.2ms)
+  Rendered shared/_alerts.html.erb (0.2ms)
+Completed 200 OK in 76ms (Views: 74.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:54:42 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.2ms)
+Completed 200 OK in 74ms (Views: 71.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:54:42 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 64ms (Views: 62.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:54:43 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+  Rendered shared/_navigation_bar.html.erb (0.4ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 65ms (Views: 63.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:54:43 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 67ms (Views: 64.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:55:07 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 87ms (Views: 86.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:55:30 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 70ms (Views: 68.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:56:57 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.2ms)
+Completed 200 OK in 66ms (Views: 64.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:57:17 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navigation_bar.html.erb (0.5ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 72ms (Views: 69.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:58:05 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 68ms (Views: 65.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:01:48 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 73ms (Views: 71.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:02:00 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.2ms)
+Completed 200 OK in 67ms (Views: 64.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:02:24 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.4ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 62ms (Views: 60.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:03:19 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.4ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 71ms (Views: 68.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:03:34 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.2ms)
+Completed 200 OK in 72ms (Views: 70.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:03:40 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.2ms)
+Completed 200 OK in 77ms (Views: 74.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:03:45 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navigation_bar.html.erb (0.4ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 71ms (Views: 70.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:05:02 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.4ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 98ms (Views: 96.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:05:11 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navigation_bar.html.erb (0.5ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 76ms (Views: 75.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:05:19 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 80ms (Views: 77.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:05:22 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.4ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 71ms (Views: 69.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:06:56 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 67ms (Views: 65.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:07:10 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.2ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 62ms (Views: 60.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:10:42 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_navigation_bar.html.erb (0.4ms)
+  Rendered shared/_alerts.html.erb (0.5ms)
+Completed 200 OK in 66ms (Views: 64.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:10:47 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 66ms (Views: 64.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:10:54 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  Rendered shared/_navigation_bar.html.erb (0.9ms)
+  Rendered shared/_alerts.html.erb (0.4ms)
+Completed 200 OK in 85ms (Views: 82.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:11:01 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 78ms (Views: 76.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:11:15 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 66ms (Views: 64.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:11:30 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.2ms)
+  Rendered shared/_alerts.html.erb (0.2ms)
+Completed 200 OK in 65ms (Views: 63.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:11:54 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.3ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 66ms (Views: 64.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-10 21:11:57 +1000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered shared/_navigation_bar.html.erb (0.2ms)
+  Rendered shared/_alerts.html.erb (0.2ms)
+Completed 200 OK in 65ms (Views: 63.9ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE DATABASE "HYPERBOLIC_development" ENCODING = 'unicode'[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE "HYPERBOLIC_test" ENCODING = 'unicode'[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2402090002608272025)[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (4.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2402090002608272025)[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Started GET "/" for ::1 at 2020-05-10 21:40:37 +1000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vincentlieu/.rvm/gems/ruby-2.7.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+  Rendered shared/_navigation_bar.html.erb (0.2ms)
+  Rendered shared/_alerts.html.erb (0.3ms)
+Completed 200 OK in 351ms (Views: 346.1ms | ActiveRecord: 0.0ms)
+
+
