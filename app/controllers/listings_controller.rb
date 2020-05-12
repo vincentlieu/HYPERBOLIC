@@ -75,6 +75,10 @@ class ListingsController < ApplicationController
     @condition = Condition.all
   end
 
+  def set_listing()
+    @listing = Listing.find(params[:id])
+  end
+
   def set_user_listing()
     @listing = current_user.listings.find_by_id(params[:id])
 
