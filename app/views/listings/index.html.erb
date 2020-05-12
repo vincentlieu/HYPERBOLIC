@@ -1,0 +1,9 @@
+Listings Index
+
+<div class="d-flex m-0-2 justify-content-between">
+<% @listings.each do |listing| %>
+    <div class="card" style="width: 15rem">
+        <%= link_to "#{listing.title} - #{number_to_currency(listing.price, precision: 0)}", listing_path(listing.id), class: "card-body" %>
+    </div>
+ <% end %>
+ </div>
