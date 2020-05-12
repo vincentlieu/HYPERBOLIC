@@ -1,0 +1,22 @@
+<h2>Title</h2>
+<%= @listing.title %>
+
+<h2>Price</h2>
+<%= number_to_currency(@listing.price, precision: 0) %>
+
+<h2>Brand</h2>
+<p><%= @listing.brand.name %></p>
+
+<h2>Category</h2>
+<p><%= @listing.category.name %></p>
+
+<h2>Condition</h2>
+<p><%= @listing.condition.name %></p>
+
+<h2>Description</h2>
+<p><%= @listing.description %></p>
+
+<% if current_user.id == @listing.user_id %>
+    <%= link_to "Edit", edit_listing_path(@listing) %>
+    <%= link_to "Remove", listing_path(@listing.id), method: :delete %>
+<% end %>

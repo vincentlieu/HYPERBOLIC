@@ -1,0 +1,49 @@
+<% if listing.errors.any? %>
+    <ul>
+        <% listing.errors.full_messages.each do |error| %>
+            <li><%= error %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_with model: listing, local: true do |form| %>
+    <div>
+        <%= form.label :title %>
+        <%= form.text_field :title, value: listing.title, class: "form-title" %>
+    </div>
+
+    <div>
+        <%= form.label :brand_id %>
+        <%= form.select(:brand_id, @brand.map { |brand| [brand.name, brand.id] }) %>
+    </div>
+
+    <div>
+        <%= form.label :category_id %>
+        <%= form.select(:category_id, @clothing_category.map { |category| [category.name, category.id] }) %>
+    </div>
+
+        <div>
+        <%= form.label :condition_id %>
+        <%= form.select(:condition_id, @condition.map { |condition| [condition.name, condition.id] }) %>
+    </div>
+
+    <div>
+        <%= form.label :description %>
+        <%= form.text_area :description, value: listing.description %>
+    </div>
+
+    <div>
+        <%= form.label :price %>
+        <%= form.number_field :price, value: listing.price, min: 0 %>
+    </div>
+
+    <div>
+        <%= form.label :picture %>
+        <%= form.file_field :picture, accept: "image/png,image/gif,image/jpeg,image/jpg" %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+
+<% end %>
