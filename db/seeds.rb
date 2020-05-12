@@ -4,12 +4,14 @@ def total_count()
   category_count = Category.count
   brand_count = Brand.count
   condition_count = Condition.count
+  listing_count = Listing.count
 
-  p "========================================"
-  p "TOTAL USERS CREATED: #{user_count}"
-  p "TOTAL CLOTHING CATEGORIES CREATED: #{category_count}"
-  p "TOTAL BRANDS CREATED: #{brand_count}"
-  p "TOTAL CONDITIONS CREATED: #{condition_count}"
+  p "=================TOTAL=================="
+  p "USERS CREATED: #{user_count}"
+  p "CLOTHING CATEGORIES CREATED: #{category_count}"
+  p "BRANDS CREATED: #{brand_count}"
+  p "CONDITIONS CREATED: #{condition_count}"
+  p "LISTING CREATED: #{listing_count}"
   p "========================================"
 end
 
@@ -52,6 +54,18 @@ end
 conditions.each do |condition|
   Condition.create(
     name: condition,
+  )
+end
+
+for i in 1..10
+  Listing.create(
+    user_id: rand(1..User.count),
+    condition_id: rand(1..Condition.count),
+    category_id: rand(1..Category.count),
+    brand_id: rand(1..Brand.count),
+    title: Faker::Lorem.sentence(word_count: 3),
+    price: rand(1000),
+    description: Faker::Lorem.sentence(word_count: 3),
   )
 end
 
