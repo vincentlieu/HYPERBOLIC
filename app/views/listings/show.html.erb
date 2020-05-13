@@ -1,21 +1,7 @@
-<h1><%= @listing.title %></h1>
-<h2>Price</h2>
-<%= number_to_currency(@listing.price, precision: 0) %>
-<h2>Brand</h2>
-<%= @listing.brand.name %>
-<h2>Category</h2>
-<%= @listing.category.name %>
-<h2>Condition</h2>
-<%= @listing.condition.name %>
-<h2>Description</h2>
-<%= @listing.description %>
-<% if @listing.picture.attached? %>
-<%= image_tag @listing.picture %>
-<% end %>
-
+<div class="d-flex justify-content-end">
 <% if current_user.id == @listing.user_id %>
-    <%= link_to "Edit", edit_listing_path(@listing) %>
-    <%= link_to "Remove listing", listing_path(@listing.id), data: { toggle: "modal", target: "#RemoveListingModal" }, class: "btn btn-danger" %>
+    <%= link_to "Edit", edit_listing_path(@listing), class: "btn btn-primary mr-2" %>
+    <%= link_to "Remove", listing_path(@listing.id), data: { toggle: "modal", target: "#RemoveListingModal" }, class: "btn btn-danger" %>
     <!-- Modal -->
       <div class="modal fade" id="RemoveListingModal" tabindex="-1" role="dialog" aria-labelledby="RemoveListingModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-danger" role="document">
@@ -42,3 +28,34 @@
     </div>
 </div>
 <% end %>
+</div>
+
+<div class="container">
+    <div class="row">
+    <h1><%= @listing.title %></h1>
+    </div>
+    <div class="row">
+        <div class="col">
+        <% if @listing.picture.attached? %>
+            <%= image_tag @listing.picture %>
+        <% end %>
+        </div>
+    
+    <div class="col">
+        <div class="mb-3">
+            <h2 class="font-weight-bold mb-3"><%= number_to_currency(@listing.price, precision: 0) %></h2>
+        </div>
+        <div class="mb-2">
+            <p><%= @listing.brand.name %> - <%= @listing.category.name %><p>
+        </div>
+        <div class="mb-2">
+            <h5>Condition:</h5> 
+            <%= @listing.condition.name %>
+        </div>
+        <div class="mb-2">
+            <h5>Description:</h5>
+            <%= @listing.description %>
+        </div>
+    </div>
+</div>
+
