@@ -1,7 +1,7 @@
 <% if listing.errors.any? %>
     <ul>
         <% listing.errors.full_messages.each do |error| %>
-            <li><%= error %></li>
+            <li> <%= error %></li>
         <% end %>
     </ul>
 <% end %>
@@ -9,41 +9,64 @@
 <%= form_with model: listing, local: true do |form| %>
     <div>
         <%= form.label :title %>
-        <%= form.text_field :title, value: listing.title, class: "form-title" %>
+        <%= form.text_field :title, value: listing.title, class: "form-control" %>
     </div>
 
-    <div>
+    <div class="form-group">
         <%= form.label :brand_id %>
-        <%= form.select(:brand_id, @brand.map { |brand| [brand.name, brand.id] }) %>
+        <%= form.select(:brand_id, @brand.map { |brand| [brand.name, brand.id] }, {}, { class: "form-control" }) %>
     </div>
 
-    <div>
+    <div class="form-group">
         <%= form.label :category_id %>
-        <%= form.select(:category_id, @clothing_category.map { |category| [category.name, category.id] }) %>
+        <%= form.select(:category_id, @clothing_category.map { |category| [category.name, category.id] }, {}, { class: "form-control" }) %>
     </div>
 
-        <div>
+    <div class="form-group">
         <%= form.label :condition_id %>
-        <%= form.select(:condition_id, @condition.map { |condition| [condition.name, condition.id] }) %>
+        <%= form.select(:condition_id, @condition.map { |condition| [condition.name, condition.id] }, {}, { class: "form-control" }) %>
     </div>
 
-    <div>
+    <div class="form-group">
         <%= form.label :description %>
-        <%= form.text_area :description, value: listing.description %>
+        <%= form.text_area :description, value: listing.description, class: "form-control", rows: "5" %>
     </div>
 
-    <div>
-        <%= form.label :price %>
-        <%= form.number_field :price, value: listing.price, min: 0 %>
+    <div class="form-group">
+    <%= form.label :price %>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+            </div>
+            <%= form.number_field :price, value: listing.price, min: 0, class: "form-control", placeholder: "Amount (to the nearest dollar)" %>
+            <div class="input-group-append">
+                <span class="input-group-text">.00</span>
+            </div>
+        </div>
     </div>
-
-    <div>
+   
+    <div class="form-group">
         <%= form.label :picture %>
-        <%= form.file_field :picture, accept: "image/png,image/gif,image/jpeg,image/jpg" %>
+        <div class="input-group mb-3">
+            <div class="custom-file">
+                <%= form.file_field :picture, accept: "image/png,image/gif,image/jpeg,image/jpg", class: "custom-file-input", id: "inputGroupFile01" %>
+                <label class="custom-file-label" for="inputGroupFile01"></label>
+            </div>
+        </div>
     </div>
 
-    <div>
+    <div class="form-group d-flex justify-content-between">
+    <% # Returns true of the record is not a new record and it was not destroyed %>
         <%= form.submit listing.persisted? ? "Update listing" : "Create listing", class: "btn btn-primary" %>
+        <%= link_to "Cancel", listing.persisted? ? listing_path(listing.id) : listings_path, class: "btn btn-danger" %>
     </div>
 
 <% end %>
+
+<script type="application/javascript">
+    $('input[type="file"]').change(function(e){
+        var fileName = e.target.files[0].name;
+        $('.custom-file-label').html(fileName);
+    });
+</script>
+
