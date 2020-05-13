@@ -1,22 +1,16 @@
-<h2>Title</h2>
-<%= @listing.title %>
-
+<h1><%= @listing.title %></h1>
 <h2>Price</h2>
 <%= number_to_currency(@listing.price, precision: 0) %>
-
 <h2>Brand</h2>
-<p><%= @listing.brand.name %></p>
-
+<%= @listing.brand.name %>
 <h2>Category</h2>
-<p><%= @listing.category.name %></p>
-
+<%= @listing.category.name %>
 <h2>Condition</h2>
-<p><%= @listing.condition.name %></p>
-
+<%= @listing.condition.name %>
 <h2>Description</h2>
-<p><%= @listing.description %></p>
+<%= @listing.description %>
 
 <% if current_user.id == @listing.user_id %>
-    <%= link_to "Edit", edit_listing_path(@listing) %>
-    <%= link_to "Remove", listing_path(@listing.id), method: :delete %>
+    <%= link_to "Edit", edit_listing_path(listing) %>
+    <%= link_to "Remove", listing_path(listing.id), method: :delete %>
 <% end %>
