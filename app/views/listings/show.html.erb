@@ -9,8 +9,11 @@
 <%= @listing.condition.name %>
 <h2>Description</h2>
 <%= @listing.description %>
+<% if @listing.picture.attached? %>
+<%= image_tag @listing.picture %>
+<% end %>
 
 <% if current_user.id == @listing.user_id %>
-    <%= link_to "Edit", edit_listing_path(listing) %>
-    <%= link_to "Remove", listing_path(listing.id), method: :delete %>
+    <%= link_to "Edit", edit_listing_path(@listing) %>
+    <%= link_to "Remove", listing_path(@listing.id), method: :delete %>
 <% end %>

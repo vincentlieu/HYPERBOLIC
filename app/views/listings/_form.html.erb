@@ -43,7 +43,7 @@
     </div>
 
     <div>
-        <%= form.submit %>
+        <%= form.submit listing.persisted? ? "Update listing" : "Create listing", class: "btn btn-primary" %>
     </div>
 
 <% end %>
