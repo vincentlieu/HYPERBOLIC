@@ -1,8 +1,10 @@
-Listings Index
+<div class="d-flex justify-content-end mb-2">
+    <%= link_to "Create new", new_listing_path, class: "btn btn-primary" %>
+</div>
 
-<div class="d-flex m-auto justify-content-between">
+<div class="d-flex flex-wrap justify-content-around mt-2">
 <% @listings.each do |listing| %>
-    <div class="card" style="width: 15rem">
+    <div class="card m-3" style="width: 15rem">
         <%= link_to "#{listing.title} - #{number_to_currency(listing.price, precision: 0)}", listing_path(listing.id), class: "card-body" %>
     </div>
  <% end %>
