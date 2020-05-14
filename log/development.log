@@ -28514,3 +28514,40 @@ FOREIGN KEY ("user_id")
   ↳ db/seeds.rb:6
   [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "listings"[0m
   ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2402090002608272025)[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateFavouriteListings (20200514010507)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "favourite_listings" ("id" bigserial primary key, "user_id" bigint, "listing_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_d4701867bd"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_e3a7da9903"
+FOREIGN KEY ("listing_id")
+  REFERENCES "listings" ("id")
+)[0m
+  ↳ db/migrate/20200514010507_create_favourite_listings.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_favourite_listings_on_user_id" ON "favourite_listings"  ("user_id")[0m
+  ↳ db/migrate/20200514010507_create_favourite_listings.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_favourite_listings_on_listing_id" ON "favourite_listings"  ("listing_id")[0m
+  ↳ db/migrate/20200514010507_create_favourite_listings.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200514010507"]]
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (4.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2402090002608272025)[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vincentlieu/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mListing Load (6.7ms)[0m  [1m[34mSELECT  "listings".* FROM "listings" INNER JOIN "favourite_listings" ON "listings"."id" = "favourite_listings"."listing_id" WHERE "favourite_listings"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "listing_id" FROM "listings" INNER JOIN "favourite_listings" ON "listings"."id" = "favourite_listings"."listing_id" WHERE "favourite_listings"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mListing Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "listings" INNER JOIN "favourite_listings" ON "listings"."id" = "favourite_listings"."listing_id" WHERE "favourite_listings"."user_id" = $1 AND "listings"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 9], ["LIMIT", 1]]
