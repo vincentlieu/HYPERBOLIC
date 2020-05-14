@@ -7,10 +7,10 @@ def total_count()
   listing_count = Listing.count
 
   p "=================TOTAL=================="
-  p "USERS CREATED: #{user_count}"
   p "CLOTHING CATEGORIES CREATED: #{category_count}"
   p "BRANDS CREATED: #{brand_count}"
   p "CONDITIONS CREATED: #{condition_count}"
+  p "USERS CREATED: #{user_count}"
   p "LISTING CREATED: #{listing_count}"
   p "========================================"
 end
@@ -18,6 +18,24 @@ end
 clothing_category = ["Accessories", "Bottoms", "Headwear", "Outerwear", "Shirt", "T-Shirt", "Bags"]
 brands = ["Adidas", "Nike", "Supreme", "Off-White", "Palace", "Bape", "Kaws"]
 conditions = ["New with tags", "New without tags", "New with box", "New without box", "New with defects", "Pre-owned"]
+
+clothing_category.each do |category|
+  Category.create(
+    name: category,
+  )
+end
+
+brands.each do |brand|
+  Brand.create(
+    name: brand,
+  )
+end
+
+conditions.each do |condition|
+  Condition.create(
+    name: condition,
+  )
+end
 
 # Generate test account
 User.create(
@@ -36,24 +54,6 @@ for i in 1..10
     password: "password",
     password_confirmation: "password",
     biography: Faker::Lorem.sentence(word_count: 3),
-  )
-end
-
-clothing_category.each do |category|
-  Category.create(
-    name: category,
-  )
-end
-
-brands.each do |brand|
-  Brand.create(
-    name: brand,
-  )
-end
-
-conditions.each do |condition|
-  Condition.create(
-    name: condition,
   )
 end
 
