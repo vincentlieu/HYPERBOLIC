@@ -28,7 +28,13 @@
         </div>
       </div>
     </div>
-</div>
+<% else %>
+  <% # Check to see if the user has already favourited the listing %>
+    <% if current_user.favourites.exists?(@listing.id) %>
+      <%= link_to image_tag("favourited.svg"), favourite_listing_path(@listing, type: "unfavourite", id: @listing.id), data: { toggle: "tooltip", placement: "bottom", title: "Favourited" }, method: :put %>
+  <% else %>
+    <%= link_to image_tag("favourite.svg"), favourite_listing_path(@listing, type: "favourite", id: @listing.id), data: { toggle: "tooltip", placement: "bottom", title: "Add to Favourites" }, method: :put %>
+  <% end %>
 <% end %>
 </div>
 
@@ -61,11 +67,8 @@
     </div>
 </div>
 
-<% # Check to see if the user has already favourited the listing %>
-<% if current_user.favourites.exists?(@listing.id) %>
-  <%= link_to "unfavourite", favourite_listing_path(@listing, type: "unfavourite", id: @listing.id), method: :put %>
-<% else %>
-  <%= link_to "favourite", favourite_listing_path(@listing, type: "favourite", id: @listing.id), method: :put %>
-<% end %>
-
-
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
