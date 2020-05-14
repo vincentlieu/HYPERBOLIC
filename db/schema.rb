@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_12_033644) do
+ActiveRecord::Schema.define(version: 2020_05_14_010507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,15 @@ ActiveRecord::Schema.define(version: 2020_05_12_033644) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "favourite_listings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "listing_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_favourite_listings_on_listing_id"
+    t.index ["user_id"], name: "index_favourite_listings_on_user_id"
+  end
+
   create_table "listings", force: :cascade do |t|
     t.string "title"
     t.integer "price"
@@ -87,6 +96,8 @@ ActiveRecord::Schema.define(version: 2020_05_12_033644) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "favourite_listings", "listings"
+  add_foreign_key "favourite_listings", "users"
   add_foreign_key "listings", "brands"
   add_foreign_key "listings", "categories"
   add_foreign_key "listings", "conditions"
