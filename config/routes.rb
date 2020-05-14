@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "/", to: "pages#home", as: "root"
   get "about", to: "pages#about", as: "about"
   get "help", to: "pages#help", as: "help"
+
   get "listings", to: "listings#index", as: "listings"
   post "listings", to: "listings#create"
   get "listings/new", to: "listings#new", as: "new_listing"
@@ -13,4 +14,10 @@ Rails.application.routes.draw do
   patch "/listings/:id", to: "listings#update"
   put "/listings/:id", to: "listings#update"
   delete "/listings/:id", to: "listings#destroy"
+
+  get "users/:id/", to: "users#show", as: "user_profile"
+  get "users/:id/favourites", to: "users#favourites", as: "user_favourites"
+
+  #If path is invalid redirect to root
+  # get "*path", to: redirect("/")
 end
