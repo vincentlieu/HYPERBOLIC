@@ -4,8 +4,13 @@
 
 <div class="d-flex flex-wrap justify-content-around mt-2">
 <% @listings.each do |listing| %>
-    <div class="card m-3" style="width: 15rem">
-        <%= link_to "#{listing.title} - #{number_to_currency(listing.price, precision: 0)}", listing_path(listing.id), class: "card-body" %>
+    <div class= "card m-3", style= "width 15rem">
+    <%= image_tag "placeholder-avatar", class: "card-img-top", style: "width: 250px; height: 250px;" %>
+        <div class="card-body">
+            <h5 class="card-title"><%= listing.title %></h5>
+            <p class="font-weight-bolder"><%= number_to_currency(listing.price, precision: 0) %></p>
+            <%= link_to "show", listing_path(listing.id), class: "btn btn-primary" %>
+        </div>
     </div>
- <% end %>
- </div>
+<% end %>
+</div>
