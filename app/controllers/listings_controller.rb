@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new, :show, :edit, :update, :destroy]
   before_action :set_user_listing, only: [:edit, :update, :destroy]
-  before_action :set_listing, only: [:show]
+  before_action :set_listing, only: [:show, :favourite]
 
   def index()
     @listings = Listing.all.order("listings.created_at DESC")
@@ -61,6 +61,22 @@ class ListingsController < ApplicationController
     end
 
     redirect_to listings_path
+  end
+
+  def favourite
+    type = params[:type]
+    if type == "favourite"
+      current_user.favourites << @listing
+      current_user.save
+      redirect_back(fallback_location: listings_path)
+    elsif type == "unfavourite"
+      current_user.favourites.destroy(@listing)
+      current_user.save
+      redirect_back(fallback_location: listings_path)
+    else
+      # Type missing, nothing happens
+      redirect_back(fallback_location: listings_path)
+    end
   end
 
   private
