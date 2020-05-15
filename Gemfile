@@ -80,3 +80,7 @@ gem "jquery", "~> 0.0.1"
 gem "jquery-rails", "~> 4.4"
 
 gem "faker", "~> 2.11"
+
+gem "stripe", "~> 5.22"
+
+gem "ultrahook", "~> 0.1.5"
