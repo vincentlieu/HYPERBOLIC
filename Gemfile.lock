@@ -335,6 +335,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise (~> 4.7)
+  execjs (~> 2.7)
   faker (~> 2.11)
   guard
   guard-livereload (~> 2.5)
