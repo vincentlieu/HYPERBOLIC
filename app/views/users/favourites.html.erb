@@ -1,3 +1,4 @@
-<% @user.favourites.each do |favourite| %>
+<h2>Favourites</h2>
+<% @favourites.each do |favourite| %>
     <li><%= link_to favourite.title, listing_path(favourite.id) %></li>
 <% end %>

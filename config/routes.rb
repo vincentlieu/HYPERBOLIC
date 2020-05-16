@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get "/users/:id", to: "users#show", as: "user_profile"
   get "/users/:id/favourites", to: "users#favourites", as: "user_favourites"
+  get "/users/:id/purchases", to: "users#purchases", as: "user_purchases"
 
   get "/payments/success", to: "payments#success"
   post "/payments/webhook", to: "payments#webhook"
