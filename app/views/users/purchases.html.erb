@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Purchases</h2>
+</div>
+<% if @purchases.exists? %>
+    <div class="container">
+        <div class="row">
+            <div class="col font-weight-bold">Date</div>
+            <div class="col font-weight-bold">Item</div>
+            <div class="col font-weight-bold">Receipt</div>
+        </div>
+    <% @purchases.each do |purchase| %>
+        <div class="row">
+            <div class="col">
+                <%= purchase.created_at.strftime("%Y/%m/%d %H:%M") %>
+            </div>
+            <div class="col">
+                <%= link_to purchase.listing.title, listing_path(purchase.listing_id) %>
+            </div>
+            <div class="col">
+                <%= purchase.stripe_receipt %>
+            </div>
+        </div>
+    <% end %>
+<% else %>
+        <div class="container">
+            <%= "You haven't made any purchases yet." %>
+        </div>
+<% end %>

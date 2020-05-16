@@ -2,6 +2,8 @@ class PaymentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:webhook]
 
   def success()
+    @purchase = current_user.purchases.last
+    @listing = current_user.purchases.last.listing
   end
 
   def webhook()
@@ -10,9 +12,10 @@ class PaymentsController < ApplicationController
     listing_id = payment.metadata.listing_id
     user_id = payment.metadata.user_id
 
-    p "listing id " + listing_id
-    p "user id " + user_id
-
-    status 200
+    Purchase.create(
+      user_id: user_id,
+      listing_id: listing_id,
+      stripe_receipt: payment_id,
+    )
   end
 end

@@ -4,7 +4,15 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :favourite]
 
   def index()
-    @listings = Listing.all.order("listings.created_at DESC")
+    @all_listings = Listing.all.order("id DESC")
+    @listings = []
+
+    # Don't show listings that have been purchased.
+    @all_listings.each do |listing|
+      if listing.purchase == nil
+        @listings.push(listing)
+      end
+    end
   end
 
   def new()
@@ -85,7 +93,7 @@ class ListingsController < ApplicationController
     redirect_to listings_path
   end
 
-  def favourite
+  def favourite()
     type = params[:type]
     if type == "favourite"
       current_user.favourites << @listing

@@ -10,5 +10,7 @@ class User < ApplicationRecord
   has_many :favourite_listings
   has_many :favourites, through: :favourite_listings, source: :listing
 
+  has_many :purchases
+
   validates :full_name, presence: true
 end

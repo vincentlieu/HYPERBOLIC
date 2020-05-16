@@ -2,9 +2,9 @@
     <%= link_to "Create new", new_listing_path, class: "btn btn-primary" %>
 </div>
 
-<div class="d-flex flex-wrap justify-content-around mt-2">
+<div class="d-flex flex-wrap mt-2">
     <% @listings.each do |listing| %>
-    <div class= "card m-3", style= "width 15rem">
+    <div class= "card m-3", style= "width: 300px">
         <% if listing.picture.attached? %>
         <%= image_tag listing.picture, class: "card-img-top", style: "width: 250px; height: 250px;" %>
     <% else %>

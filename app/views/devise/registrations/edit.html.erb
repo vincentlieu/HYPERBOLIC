@@ -2,7 +2,7 @@
     <div class="align-self-center">
       <% if current_user.avatar.attached? %>
           <%= image_tag current_user.avatar, class: "rounded" %>
-          <% else %>
+      <% else %>
           <%= image_tag "placeholder-avatar.png", class: "rounded" %>
       <% end %>
     </div>
