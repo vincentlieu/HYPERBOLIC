@@ -2,6 +2,8 @@ class PaymentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:webhook]
 
   def success()
+    @purchase = current_user.purchases.last
+    @listing = current_user.purchases.last.listing
   end
 
   def webhook()

@@ -1,3 +1,19 @@
-Successfully paid!
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <h3 class="alert-heading">Thank You!</h3>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    <hr>
+    <p>Receipt number: <%= @purchase.stripe_receipt %>
+    <p>You can track all your purchases <%= link_to "here", user_purchases_path(current_user.id) %></p>
+</div> 
 
-<%= link_to "All listings", listings_path %>
+<div class="container">
+    <%= link_to "Continue shopping", listings_path, class: "btn btn-secondary" %>
+<div>
+
+<%= render "shared/listing_details", listing: @listing %>
+
+<script>
+$().alert('close')
+</script>
