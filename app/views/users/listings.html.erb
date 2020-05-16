@@ -11,7 +11,6 @@
             <div class="col font-weight-bold">Status</div>
             <div class="col font-weight-bold">Date sold</div>
             <div class="col font-weight-bold">Reference</div>
-
         </div>
     <% @listings.each do |listing| %>
         <div class="row">
@@ -32,16 +31,16 @@
                 <% end %>
             </div>
             <div class="col">
-            <% if listing.purchase %>
-                <%= listing.purchase.created_at.strftime("%Y/%m/%d %H:%M") %>
-            <% else %>
-                <%= "--" %>
-            <% end %>
+                <% if listing.purchase %>
+                    <%= listing.purchase.created_at.strftime("%Y/%m/%d %H:%M") %>
+                <% else %>
+                    <%= "--" %>
+                <% end %>
             </div>
             <div class="col">
-            <%= link_to "view", listing_path(listing) %>
+                <%= link_to "view", listing_path(listing) %>
             </div>
-        <div/>
+        </div>
     <% end %>
 <% else %>
         <div class="container">
