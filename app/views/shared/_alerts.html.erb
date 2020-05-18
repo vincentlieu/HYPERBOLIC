@@ -1,2 +1,16 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% if flash[:notice] %>
+    <div class="alert alert-success mt-3">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:notice] %>
+    </div>
+    <% elsif flash[:error] %>
+    <div class="alert alert-danger mt-3">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:error] %>
+    </div>
+    <% elsif flash[:alert] %>
+    <div class="alert alert-warning mt-3">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:alert] %>
+    </div>
+<% end %>

@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  def index()
+  def home()
+    @listings = Listing.all
   end
 
   def about()

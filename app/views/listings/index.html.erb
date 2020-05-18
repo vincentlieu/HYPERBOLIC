@@ -4,6 +4,7 @@
 
 <div class="d-flex flex-wrap mt-2">
     <% @listings.each do |listing| %>
+    <div class="col-sm-4">
     <div class= "card m-3", style= "width: 300px">
         <% if listing.picture.attached? %>
         <%= image_tag listing.picture, class: "card-img-top", style: "width: 250px; height: 250px;" %>
@@ -16,6 +17,7 @@
             <p class="font-weight-bolder"><%= number_to_currency(listing.price, precision: 0) %></p>
             <%= link_to "show", listing_path(listing.id), class: "btn btn-primary" %>
         </div>
+    </div>
     </div>
     <% end %>
 </div>
