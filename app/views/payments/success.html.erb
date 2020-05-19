@@ -1,3 +1,4 @@
+<div class="main-content container">
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     <h3 class="alert-heading">Thank You!</h3>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -8,12 +9,12 @@
     <p>You can track all your purchases <%= link_to "here", user_purchases_path(current_user.id) %></p>
 </div> 
 
-<div class="container">
-    <%= link_to "Continue shopping", listings_path, class: "btn btn-secondary" %>
-<div>
+
+<%= link_to "Continue shopping", listings_path, class: "btn btn-secondary" %>
+
 
 <%= render "shared/listing_details", listing: @listing %>
-
+</div>
 <script>
 $().alert('close')
 </script>
