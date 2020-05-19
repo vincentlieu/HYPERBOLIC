@@ -1,5 +1,5 @@
-<div class="container d-flex justify-content-between p-0">
-  <%= link_to "Continue shopping", listings_path, class: "btn btn-secondary" %>
+<div class="container d-flex justify-content-between p-0 mt-5">
+  <%= link_to "All listings", listings_path, class: "btn btn-secondary" %>
   <div class="d-flex justify-content-end">
     <% # Check current user owns the listing then show Edit/Remove functions %>
     <% if current_user.id == @listing.user_id %>

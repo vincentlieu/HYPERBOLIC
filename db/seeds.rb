@@ -57,7 +57,7 @@ for i in 1..10
   )
 end
 
-for i in 1..10
+for i in 1..30
   Listing.create(
     user_id: rand(1..User.count),
     condition_id: rand(1..Condition.count),

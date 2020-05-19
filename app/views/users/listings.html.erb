@@ -1,9 +1,10 @@
-<div class="container">
-<h2>Selling</h2>
+<div class="main-container container">
+    <h2>Selling</h2>
 </div>
 
+<div class="container">
 <% if @listings.exists? %>
-    <div class="container">
+
         <div class="row">
             <div class="col font-weight-bold">Date Posted</div>
             <div class="col font-weight-bold">Price</div>
@@ -43,7 +44,7 @@
         </div>
     <% end %>
 <% else %>
-        <div class="container">
-            <%= "You haven't listed anything to sell." %>
-        </div>
+    <%= "You haven't listed anything to sell." %>
 <% end %>
+</div>
+
