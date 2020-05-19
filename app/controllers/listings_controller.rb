@@ -4,15 +4,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :favourite]
 
   def index()
-    @all_listings = Listing.all.order("id DESC")
-    @listings = []
-
-    # Don't show listings that have been purchased.
-    @all_listings.each do |listing|
-      if listing.purchase == nil
-        @listings.push(listing)
-      end
-    end
+    @listings = Listing.where(purchased: false).paginate(page: params[:page], per_page: 16).order("id DESC")
   end
 
   def new()

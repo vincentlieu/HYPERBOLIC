@@ -12,6 +12,8 @@ class PaymentsController < ApplicationController
     listing_id = payment.metadata.listing_id
     user_id = payment.metadata.user_id
 
+    @listing = Listing.find_by_id(listing_id).update(purchased: :true)
+
     Purchase.create(
       user_id: user_id,
       listing_id: listing_id,
