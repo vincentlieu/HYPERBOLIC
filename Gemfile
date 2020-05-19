@@ -87,3 +87,5 @@ gem "ultrahook", "~> 0.1.5"
 
 gem "execjs", "~> 2.7"
 
+
+gem "will_paginate-bootstrap4", "~> 0.2.2"

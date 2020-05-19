@@ -14,16 +14,25 @@
 
  @import "bootstrap";
 
+ /* Globals */
+textarea {
+    resize: none;
+}
+
+footer {
+    background-color: red;
+    height: 50px;
+}
+
+ /* User management */
  .avatar {
      width: 40px;
      height: 40px;
  }
 
- textarea {
-     resize: none;
- }
-
+ /* Listings */
  .bs-tooltip-bottom {
      margin-top: 5px;
  }
+
 
