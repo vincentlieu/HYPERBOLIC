@@ -1,5 +1,6 @@
+<div class="main-content container">
 <div class="container d-flex justify-content-between p-0">
-  <%= link_to "Continue shopping", listings_path, class: "btn btn-secondary" %>
+  <%= link_to "All listings", listings_path, class: "btn btn-secondary" %>
   <div class="d-flex justify-content-end">
     <% # Check current user owns the listing then show Edit/Remove functions %>
     <% if current_user.id == @listing.user_id %>
@@ -46,6 +47,7 @@
 </div>
 
 <%= render "shared/listing_details", listing: @listing %>
+</div>
 
 <script src="https://js.stripe.com/v3/"></script>
 

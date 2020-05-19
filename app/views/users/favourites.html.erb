@@ -1,4 +1,33 @@
-<h2>Favourites</h2>
-<% @favourites.each do |favourite| %>
-    <li><%= link_to favourite.title, listing_path(favourite.id) %></li>
-<% end %>
+<div class="main-content container">
+    <h2>Favourites</h2>
+    <% if @favourites.exists? %>
+            <div class="row">
+                <div class="col font-weight-bold">Date Posted</div>
+                <div class="col font-weight-bold">Price</div>
+                <div class="col font-weight-bold">Title</div>
+                <div class="col font-weight-bold">Reference</div>
+            </div>
+        <% @favourites.each do |favourite| %>
+        <% if favourite.purchased == false %>
+            <div class="row">
+                <div class="col">
+                    <%= favourite.created_at.strftime("%Y/%m/%d %H:%M") %>
+                </div>
+                <div class="col">
+                    <%= number_to_currency(favourite.price, precision: 0) %>
+                </div>
+                <div class="col">
+                    <%= favourite.title %>
+                </div>
+                <div class="col">
+                    <%= link_to "view", listing_path(favourite.id) %>
+                </div>
+            </div>
+            <% end %>
+        <% end %>
+    <% else %>
+    <%= "You currently haven't favourited anything." %>
+    <% end %>
+
+</div>
+

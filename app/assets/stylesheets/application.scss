@@ -14,14 +14,34 @@
 
  @import "bootstrap";
 
- /* Globals */
+ /* GLOBALS + PARTIALS */
 textarea {
     resize: none;
 }
 
-footer {
-    background-color: red;
-    height: 50px;
+body {
+    padding-bottom: 70px;
+}
+
+.main-content {
+    margin-top: 3rem;
+    height: 100vh;
+}
+
+.listing-cards {
+    width: 250px;
+    height: 450px;
+}
+
+.card-img-top {
+    width: 250px;
+    height: 250px;
+}
+
+.card-price {
+    margin: 0;
+    font-weight: bolder;
+    font-size: 1rem;
 }
 
  /* User management */
@@ -34,5 +54,6 @@ footer {
  .bs-tooltip-bottom {
      margin-top: 5px;
  }
+
 
 
