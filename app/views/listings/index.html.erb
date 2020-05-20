@@ -2,7 +2,30 @@
     <div class="d-flex justify-content-end mb-5">
         <%= link_to "Create new", new_listing_path, class: "btn btn-primary" %>
     </div>
-    
+
+    <div class="search-container container d-flex flex-column justify-content-center">
+    <%= search_form_for @search do |form| %>
+        <div class="input-group mb-3">
+            <%= form.search_field :title_or_description_or_brand_name_or_condition_name_or_category_name_cont, class: "form-control" %>
+            <div class="input-group-append">
+                <%= form.submit "Search", class: " btn btn-primary" %>
+            </div>
+        </div>
+        
+    <% end %>
+        <div class="sort-links-container">
+            <div class="sort-links">
+                <%= sort_link @search, :title, "Title" %>
+            </div>
+            <div class="sort-links">
+                <%= sort_link @search, :price, "Price" %>
+            </div>
+            <div class="sort-links">
+            <%= sort_link @search, :created_at, "Created date" %>
+            </div>
+        </div>
+    </div>
+
     <%= render "shared/display_listings" %>
     
     <div class="container mt-5">
