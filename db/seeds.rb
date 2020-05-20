@@ -55,7 +55,7 @@ if User.exists?(full_name: "Test Account", email: "test@test.com") == false
 end
 
 # Generate random user accounts
-for i in 1..10
+for i in 1..30
   User.create(
     full_name: Faker::Name.name,
     email: Faker::Internet.email,
@@ -65,7 +65,7 @@ for i in 1..10
   )
 end
 
-for i in 1..30
+for i in 1..70
   Listing.create(
     user_id: rand(1..User.count),
     condition_id: rand(1..Condition.count),
