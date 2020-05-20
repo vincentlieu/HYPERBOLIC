@@ -11,7 +11,19 @@
                 <%= form.submit "Search", class: " btn btn-primary" %>
             </div>
         </div>
+        
     <% end %>
+        <div class="sort-links-container">
+            <div class="sort-links">
+                <%= sort_link @search, :title, "Title" %>
+            </div>
+            <div class="sort-links">
+                <%= sort_link @search, :price, "Price" %>
+            </div>
+            <div class="sort-links">
+            <%= sort_link @search, :created_at, "Created date" %>
+            </div>
+        </div>
     </div>
 
     <%= render "shared/display_listings" %>
