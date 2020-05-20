@@ -23,5 +23,5 @@ Rails.application.routes.draw do
   get "/payments/success", to: "payments#success"
   post "/payments/webhook", to: "payments#webhook"
   #If path is invalid redirect to root
-  # get "*path", to: redirect("/")
+  get "*path", to: redirect("/")
 end

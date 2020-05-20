@@ -7,44 +7,52 @@ def total_count()
   listing_count = Listing.count
 
   p "=================TOTAL=================="
-  p "CLOTHING CATEGORIES CREATED: #{category_count}"
-  p "BRANDS CREATED: #{brand_count}"
-  p "CONDITIONS CREATED: #{condition_count}"
-  p "USERS CREATED: #{user_count}"
-  p "LISTING CREATED: #{listing_count}"
+  p "CLOTHING CATEGORIES: #{category_count}"
+  p "BRANDS: #{brand_count}"
+  p "CONDITIONS: #{condition_count}"
+  p "USERS: #{user_count}"
+  p "LISTING: #{listing_count}"
   p "========================================"
 end
 
-clothing_category = ["Accessories", "Bottoms", "Headwear", "Outerwear", "Shirt", "T-Shirt", "Bags"]
-brands = ["Adidas", "Nike", "Supreme", "Off-White", "Palace", "Bape", "Kaws"]
-conditions = ["New with tags", "New without tags", "New with box", "New without box", "New with defects", "Pre-owned"]
+clothing_category = ["Accessories", "Bottoms", "Headwear", "Outerwear", "T-Shirt"]
+brands = ["Adidas", "Nike", "Supreme", "Off-White", "Bape"]
+conditions = ["New with tags", "New without tags", "New with defects", "Pre-owned"]
 
 clothing_category.each do |category|
-  Category.create(
-    name: category,
-  )
+  if Category.exists?(name: category) == false
+    Category.create(
+      name: category,
+    )
+  end
 end
 
 brands.each do |brand|
-  Brand.create(
-    name: brand,
-  )
+  if Brand.exists?(name: brand) == false
+    Brand.create(
+      name: brand,
+    )
+  end
 end
 
 conditions.each do |condition|
-  Condition.create(
-    name: condition,
-  )
+  if Condition.exists?(name: condition) == false
+    Condition.create(
+      name: condition,
+    )
+  end
 end
 
 # Generate test account
-User.create(
-  full_name: "Test Account",
-  email: "test@test.com",
-  password: "password",
-  password_confirmation: "password",
-  biography: Faker::Lorem.sentence(word_count: 3),
-)
+if User.exists?(full_name: "Test Account", email: "test@test.com") == false
+  User.create(
+    full_name: "Test Account",
+    email: "test@test.com",
+    password: "password",
+    password_confirmation: "password",
+    biography: Faker::Lorem.sentence(word_count: 3),
+  )
+end
 
 # Generate random user accounts
 for i in 1..10
@@ -67,6 +75,16 @@ for i in 1..30
     price: rand(1000),
     description: Faker::Lorem.sentence(word_count: 3),
   )
+end
+
+#attach image
+listings = Listing.all
+
+listings.each do |listing|
+  if listing.brand.name
+    random = rand(1..3)
+    listing.picture.attach(io: File.open("app/assets/images/stock_image/#{listing.brand.name}/#{listing.brand.name}_#{listing.category.name}_#{random}.png"), filename: "#{listing.brand.name}_#{listing.category.name}_#{random}.png", content_type: "image/png")
+  end
 end
 
 total_count()
