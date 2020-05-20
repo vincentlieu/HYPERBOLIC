@@ -38,9 +38,9 @@
       <% else %>
         <% # Check if the user has already favourited the listing %>
           <% if current_user.favourites.exists?(@listing.id) %>
-            <%= link_to image_tag("favourited.svg"), favourite_listing_path(@listing, type: "unfavourite", id: @listing.id), data: { toggle: "tooltip", placement: "bottom", title: "Favourited" }, method: :put %>
+            <%= link_to image_tag("favourites/favourited.svg"), favourite_listing_path(@listing, type: "unfavourite", id: @listing.id), data: { toggle: "tooltip", placement: "bottom", title: "Favourited" }, method: :put %>
           <% else %>
-            <%= link_to image_tag("favourite.svg"), favourite_listing_path(@listing, type: "favourite", id: @listing.id), data: { toggle: "tooltip", placement: "bottom", title: "Add to Favourites" }, method: :put %>
+            <%= link_to image_tag("favourites/favourite.svg"), favourite_listing_path(@listing, type: "favourite", id: @listing.id), data: { toggle: "tooltip", placement: "bottom", title: "Add to Favourites" }, method: :put %>
         <% end %>
     <% end %>
   </div>
