@@ -3,13 +3,18 @@
         <%= link_to "Create new", new_listing_path, class: "btn btn-primary" %>
     </div>
 
-<%= search_form_for @search do |f| %>
-  <%= f.label :title_or_description_or_brand_name_or_condition_name_or_category_name_cont, "Search: " %>
-  <%= f.search_field :title_or_description_or_brand_name_or_condition_name_or_category_name_cont %>
-  <%= f.submit %>
-<% end %>
+    <div class="search-container container d-flex flex-column justify-content-center">
+    <%= search_form_for @search do |form| %>
+        <div class="input-group mb-3">
+            <%= form.search_field :title_or_description_or_brand_name_or_condition_name_or_category_name_cont, class: "form-control" %>
+            <div class="input-group-append">
+                <%= form.submit "Search", class: " btn btn-primary" %>
+            </div>
+        </div>
+    <% end %>
+    </div>
 
-<%= render "shared/display_listings" %>
+    <%= render "shared/display_listings" %>
     
     <div class="container mt-5">
         <%= will_paginate @listings, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, list_classes: %w(pagination justify-content-center) %>
