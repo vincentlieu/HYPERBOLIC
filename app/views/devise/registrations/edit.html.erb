@@ -2,7 +2,7 @@
   <div class="d-flex justify-content-center flex-column mb-5">
       <div class="align-self-center">
         <% if current_user.avatar.attached? %>
-            <%= image_tag current_user.avatar, class: "rounded" %>
+            <%= image_tag current_user.avatar.service_url, class: "rounded" %>
         <% else %>
             <%= image_tag "placeholder-avatar.png", class: "rounded" %>
         <% end %>

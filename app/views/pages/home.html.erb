@@ -3,16 +3,29 @@
     <li data-target="#carouseIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselIndicators" data-slide-to="1"></li>
     <li data-target="#carouselIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselIndicators" data-slide-to="4"></li>
+    <li data-target="#carouselIndicators" data-slide-to="5"></li>
   </ol>
+  
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <%= image_tag "home_logos/home_bape.png", class: "d-block w-100" %>
+      <%= link_to (image_tag "home_logos/home_bape.png", alt: "Bape", class: "d-block w-100"), listings_path %>
     </div>
     <div class="carousel-item">
-      <%= image_tag "home_logos/home_offwhite.png", class: "d-block w-100" %>
+      <%= link_to (image_tag "home_logos/home_off-white.png", alt: "Off-White", class: "d-block w-100"), listings_path %>
     </div>
     <div class="carousel-item">
-      <%= image_tag "home_logos/home_supreme.png", class: "d-block w-100" %>
+      <%= link_to (image_tag "home_logos/home_supreme.png", alt: "Supreme", class: "d-block w-100"), listings_path %>
+    </div>
+    <div class="carousel-item">
+      <%= link_to (image_tag "home_logos/home_palace.png", alt: "Palace", class: "d-block w-100"), listings_path %>
+    </div>
+    <div class="carousel-item">
+      <%= link_to (image_tag "home_logos/home_adidas.png", alt: "Adidas", class: "d-block w-100"), listings_path %>
+    </div>
+    <div class="carousel-item">
+      <%= link_to (image_tag "home_logos/home_nike.png", alt: "Supreme", class: "d-block w-100"), listings_path %>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
@@ -25,9 +38,7 @@
   </a>
 </div>
 
-
-  
-    <h3 class="text-center">Latest Listings</h3>
+<h3 class="text-center">Latest Listings</h3>
  
   <div class="container">
     <%= render "shared/display_listings" %>
@@ -36,9 +47,6 @@
   <div class="container d-flex justify-content-center mt-4">
     <%= link_to "Browse More", listings_path, class: "btn btn-primary float-center" %>
   </div>
-
-
-
 
 <script>
 $('.carousel').carousel()

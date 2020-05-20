@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col">
         <% if @listing.picture.attached? %>
-            <%= image_tag @listing.picture %>
+            <%= image_tag @listing.picture.service_url %>
         <% end %>
         </div>
     
