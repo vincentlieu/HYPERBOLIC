@@ -4,7 +4,11 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :favourite]
 
   def index()
-    @listings = Listing.where(purchased: false).paginate(page: params[:page], per_page: 16).order("id DESC")
+    #Set search condition to only listings that HAVE NOT been purchased
+    @search = Listing.where(purchased: false).search(params[:q])
+
+    #Show listings that HAVE NOT been purchased
+    @listings = @search.result.paginate(page: params[:page], per_page: 16).order("id DESC")
   end
 
   def new()
