@@ -4,10 +4,9 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :favourite]
 
   def index()
-    #Set search condition to only listings that HAVE NOT been purchased
-    @search = Listing.where(purchased: false).search(params[:q])
+    #Set search condition and display all listings to only listings that HAVE NOT been purchased.
 
-    #Show listings that HAVE NOT been purchased
+    @search = Listing.where(purchased: false).search(params[:q])
     @listings = @search.result.paginate(page: params[:page], per_page: 16).order("id DESC")
   end
 
@@ -90,6 +89,7 @@ class ListingsController < ApplicationController
   end
 
   def favourite()
+    # Add or remove the current user's favourite listing. The listing is either INSERTED or REMOVED from the favourites table.
     type = params[:type]
     if type == "favourite"
       current_user.favourites << @listing

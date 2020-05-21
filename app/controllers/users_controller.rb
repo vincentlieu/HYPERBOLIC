@@ -11,10 +11,12 @@ class UsersController < ApplicationController
   end
 
   def purchases()
+    # Show user purchases sorted in DESCENDING order.
     @purchases = current_user.purchases.order("id DESC")
   end
 
   def listings()
+    # Show user listings sorted in DESCENDING order.
     @listings = current_user.listings.order("id DESC")
   end
 

@@ -2,6 +2,7 @@ class PaymentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:webhook]
 
   def success()
+    #Return the user's latest purchase.
     @purchase = current_user.purchases.last
     @listing = current_user.purchases.last.listing
   end
@@ -14,6 +15,7 @@ class PaymentsController < ApplicationController
 
     @listing = Listing.find_by_id(listing_id).update(purchased: :true)
 
+    #Create a new record in the Purchase table when payment has been made.
     Purchase.create(
       user_id: user_id,
       listing_id: listing_id,
