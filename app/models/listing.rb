@@ -8,7 +8,7 @@ class Listing < ApplicationRecord
   has_many :favourite_listings, dependent: :destroy
   has_many :favourited_by, through: :favourite_listings, source: :user
 
-  has_one :purchase
+  has_one :purchase, dependent: :destroy
 
   validates :title, :price, :condition_id, :brand_id, :category_id, presence: :true
   validates :price, numericality: { greater_than: 0 }

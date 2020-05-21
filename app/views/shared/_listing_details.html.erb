@@ -6,6 +6,8 @@
         <div class="col">
         <% if @listing.picture.attached? %>
             <%= image_tag @listing.picture.service_url %>
+        <% else %>
+            <%= image_tag "placeholder-listing.png", alt: "listing image not attached" %>
         <% end %>
         </div>
     

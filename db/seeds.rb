@@ -55,7 +55,7 @@ if User.exists?(full_name: "Test Account", email: "test@test.com") == false
 end
 
 # Generate random user accounts
-for i in 1..30
+for i in 1..10
   User.create(
     full_name: Faker::Name.name,
     email: Faker::Internet.email,
@@ -65,7 +65,8 @@ for i in 1..30
   )
 end
 
-for i in 1..70
+#Create listing.
+for i in 1..48
   Listing.create(
     user_id: rand(1..User.count),
     condition_id: rand(1..Condition.count),
@@ -77,7 +78,7 @@ for i in 1..70
   )
 end
 
-#attach image
+#Attach image to listings - Ensure that the stock images are attached correctly accordingly to the listing's brand and category.
 listings = Listing.all
 
 listings.each do |listing|
