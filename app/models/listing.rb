@@ -11,4 +11,5 @@ class Listing < ApplicationRecord
   has_one :purchase
 
   validates :title, :price, :condition_id, :brand_id, :category_id, presence: :true
+  validates :price, numericality: { greater_than: 0 }
 end
